@@ -2,4 +2,4 @@
 
 weeks | subjects
 -|-
-1|review for loop, if, display stars
+1|review for loop, if, display stars, getters and setters
