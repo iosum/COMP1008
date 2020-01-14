@@ -68,7 +68,6 @@ public class Account {
     /**
      * this method will validate the money and return the balance after depositing
      * @param amount
-     * @return
      */
     public double deposit(double amount) {
         if(amount < 0) {
@@ -81,7 +80,6 @@ public class Account {
     /**
      * this method will validate the amount of withdrawal and calculate the balance after withdrawing
      * @param amount
-     * @return
      */
     public double withdraw(double amount) {
         if(balance < amount) {
@@ -100,6 +98,6 @@ public class Account {
      */
     @Override
     public String toString() {
-        return String.format("FirstName:%s LastName:%s Balance:%.1f", firstName, lastName, balance);
+        return String.format("FirstName:%s LastName:%s Balance:%.1f", getFirstName(), getLastName(), getBalance());
     }
 }
