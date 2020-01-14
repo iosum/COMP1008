@@ -10,6 +10,7 @@ public class Account {
 
     /**
      * Initialize the person's first name, last name and the balance
+     *
      * @param firstName
      * @param lastName
      * @param balance
@@ -26,12 +27,13 @@ public class Account {
 
     /**
      * this method will validate if first name only contains letters
+     *
      * @param firstName
      */
     public void setFirstName(String firstName) {
         char[] charArray = firstName.toCharArray();
-        for(char c: charArray) {
-            if(!Character.isLetter(c)) {
+        for (char c : charArray) {
+            if (!Character.isLetter(c)) {
                 throw new IllegalArgumentException("Invalid character in the first name");
             }
         }
@@ -45,12 +47,13 @@ public class Account {
 
     /**
      * this method will validate if last name only contains letters
+     *
      * @param lastName
      */
     public void setLastName(String lastName) {
         char[] charArray = lastName.toCharArray();
-        for(char c: charArray) {
-            if(!Character.isLetter(c)) {
+        for (char c : charArray) {
+            if (!Character.isLetter(c)) {
                 throw new IllegalArgumentException("Invalid character in the last name");
             }
         }
@@ -67,10 +70,11 @@ public class Account {
 
     /**
      * this method will validate the money and return the balance after depositing
+     *
      * @param amount
      */
     public double deposit(double amount) {
-        if(amount < 0) {
+        if (amount < 0) {
             throw new IllegalArgumentException("Cannot deposit a negative number");
         }
         balance += amount;
@@ -79,13 +83,14 @@ public class Account {
 
     /**
      * this method will validate the amount of withdrawal and calculate the balance after withdrawing
+     *
      * @param amount
      */
     public double withdraw(double amount) {
-        if(balance < amount) {
+        if (balance < amount) {
             throw new IllegalArgumentException("Not Sufficient Funds to withdraw");
         }
-        if(amount < 0.0) {
+        if (amount < 0.0) {
             throw new IllegalArgumentException("Cannot withdraw a negative amount");
         }
         balance -= amount;
@@ -94,6 +99,7 @@ public class Account {
 
     /**
      * this method will format personal information
+     *
      * @return
      */
     @Override
