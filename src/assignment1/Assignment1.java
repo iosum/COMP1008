@@ -1,4 +1,3 @@
-package Assignment1;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -8,7 +7,6 @@ package Assignment1;
 package assignment1;
 
 /**
- *
  * @author Radhika
  */
 public class Assignment1 {
@@ -48,7 +46,7 @@ public class Assignment1 {
          * ****************
          */
         System.out.println("Test 3: Testing getter methods-" + medium + " marks");
-        if (acc1.getfirstName().equals("Jane") && acc1.getlastName().equals("Green") && acc1.getBalance() == 50.0) {
+        if (acc1.getFirstName().equals("Jane") && acc1.getLastName().equals("Green") && acc1.getBalance() == 50.0) {
             marks += medium;
             tests++;
             System.out.println("TEST 3 PASSED!!\n");
@@ -79,7 +77,7 @@ public class Assignment1 {
 
         System.out.println("Checking balance: $3550-200");
         System.out.println(acc1.getBalance());
-        if (acc1.getfirstName().equals("Anita") && acc1.getlastName().equals("Knapp") && acc1.getBalance() == 3350.0) {
+        if (acc1.getFirstName().equals("Anita") && acc1.getLastName().equals("Knapp") && acc1.getBalance() == 3350.0) {
 
             marks += high;
             tests++;
@@ -101,7 +99,7 @@ public class Assignment1 {
             System.out.println("Test 5a: Trying to set first name as a number: \"1235\" -" + medium + " marks");
             acc1.setFirstName("1235");
 
-            System.out.println("First Name: " + acc1.getfirstName());
+            System.out.println("First Name: " + acc1.getFirstName());
             System.out.println("TEST 5a FAILED\n");
 
         } catch (Exception ex) {
@@ -126,7 +124,7 @@ public class Assignment1 {
 
             System.out.println("Test 5a: Trying to set last name as a number: \"1235\" -" + medium + " marks");
             acc1.setLastName("1235");
-            System.out.println("Last Name: " + acc1.getlastName());
+            System.out.println("Last Name: " + acc1.getLastName());
             System.out.println("TEST 5b FAILED\n");
 
         } catch (Exception ex) {
