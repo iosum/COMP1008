@@ -1,4 +1,3 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -7,6 +6,7 @@
 package assignment1;
 
 /**
+ *
  * @author Radhika
  */
 public class Assignment1 {
@@ -93,7 +93,7 @@ public class Assignment1 {
 
         System.out.println("***Negative testing all of the setter methods.****\n");
 
-        // This try-catch is for first name:
+        // This try-catch is for first name: 
         try {
 
             System.out.println("Test 5a: Trying to set first name as a number: \"1235\" -" + medium + " marks");
@@ -119,7 +119,7 @@ public class Assignment1 {
             }
         }
 
-        // This try-catch is for last name:
+        // This try-catch is for last name: 
         try {
 
             System.out.println("Test 5a: Trying to set last name as a number: \"1235\" -" + medium + " marks");
@@ -143,7 +143,7 @@ public class Assignment1 {
             }
         }
         //TEST #6
-        // This try-catch is for depositing negative:
+        // This try-catch is for depositing negative: 
         try {
 
             System.out.println("Test 6: Trying to deposit a negative number (-20) -" + medium + " marks");
