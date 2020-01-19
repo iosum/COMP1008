@@ -1,5 +1,7 @@
 package VisualDeckOfCards;
 
+import javafx.scene.image.Image;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -7,10 +9,13 @@ public class Card {
     private String suit;
     private String faceName;
     private int faceValue;
+    private Image image;
 
     public Card(String faceName, String suit) {
         setSuit(suit);
         setFaceName(faceName);
+        String fileName = faceName + "_of_" + suit + ".png";
+        image = new Image("./VisualDeckOfCards/images/" + fileName);
     }
 
     public String getSuit() {
@@ -84,6 +89,14 @@ public class Card {
     public void setFaceValue(int faceValue) {
         List validFaceNames = Arrays.asList("2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace");
         this.faceValue = validFaceNames.indexOf(faceName) + 2;
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
     }
 
     public String toString() {

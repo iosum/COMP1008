@@ -3,6 +3,7 @@ package VisualDeckOfCards;
 import javafx.scene.image.Image;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DeckOfCards {
@@ -59,6 +60,28 @@ public class DeckOfCards {
     public void setBeckOfCardImage(Image beckOfCardImage) {
         this.beckOfCardImage = beckOfCardImage;
     }
+
+    /**
+     * this method will deal with the top card off the deck
+     */
+    public Card dealTopCard() {
+        // check if the deck is empty
+        if(deck.size() > 0) {
+            return deck.remove(0);
+        }
+        else {
+            return null;
+        }
+    }
+
+    /**
+     * this method will shuffle the deck of cards
+     */
+    public void shuffle() {
+        Collections.shuffle(deck);
+    }
+
+
 
     /**
      * this method will display the deck to the console
