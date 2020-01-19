@@ -1,4 +1,4 @@
-package week2;
+package VisualDeckOfCards;
 
 import javafx.scene.image.Image;
 
@@ -17,7 +17,7 @@ public class DeckOfCards {
 
     public DeckOfCards(ArrayList<Card> deck) {
         this.deck = deck;
-        beckOfCardImage = new Image("./images/backOfCard.png");
+        beckOfCardImage = new Image("./images/back_of_card.png");
     }
 
     /**
@@ -33,7 +33,7 @@ public class DeckOfCards {
         List<String> suits = Card.getValidSuits();
 
         // create an ArrayList to hold the Card objects
-        deck = new ArrayList<>();
+        deck = new ArrayList<Card>();
 
         // loop through the suit and facenames to create
         for(String suit: suits) {
@@ -41,7 +41,7 @@ public class DeckOfCards {
                 deck.add(new Card(faceName, suit));
             }
         }
-        beckOfCardImage = new Image("./images/backOfCard.png");
+        beckOfCardImage = new Image("./VisualDeckOfCards/images/back_of_card.png");
     }
 
     public ArrayList<Card> getDeck() {
@@ -63,9 +63,9 @@ public class DeckOfCards {
     /**
      * this method will display the deck to the console
      */
-    public void displayDeck() {
-        for(Card card: deck) {
-            System.out.println(card);
-        }
-    }
+//    public void displayDeck() {
+//        for(Card card: deck) {
+//            System.out.println(card);
+//        }
+//    }
 }
