@@ -1,60 +1,21 @@
 package Lab1;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
 
 public class Car {
-    private String model;
-    private String vinNumber;
-    private String make;
-    private String color;
-    private String engine;
-    private Date year;
+    private int modelYear, mileage;
+    private String make, model, transmission;
     private double price;
-    private String transmission;
 
-
-
-    public Car(String model, String vinNumber, String make, Date year, double price, String transmission, String color, String engine) {
-        setModel(model);
-        setVinNumber(vinNumber);
+    public Car(int modelYear, String make, String model, int mileage, String transmission, double price) {
+        setModelYear(modelYear);
+        setMileage(mileage);
         setMake(make);
-        setYear(year);
-        setPrice(price);
+        setModel(model);
         setTransmission(transmission);
-        setColor(color);
-        setEngine(engine);
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public String getVinNumber() {
-        return vinNumber;
-    }
-
-    public void setVinNumber(String vinNumber) {
-        this.vinNumber = vinNumber;
-    }
-
-    public String getMake() {
-        return make;
-    }
-
-    public void setMake(String make) {
-        this.make = make;
-    }
-
-    public Date getYear() {
-        return year;
-    }
-
-    public void setYear(Date year) {
-        this.year = year;
+        setPrice(price);
     }
 
     public double getPrice() {
@@ -62,12 +23,62 @@ public class Car {
     }
 
     public void setPrice(double price) {
-        if(price >= 0.0) {
+        if (price >= 0)
             this.price = price;
-        }
-        else {
-            throw new IllegalArgumentException("price must be greater than 0");
-        }
+        else
+            throw new IllegalArgumentException("price must be greater than or equal to 0");
+    }
+
+    public Car(int modelYear, String make, String model) {
+        setModelYear(modelYear);
+        setMake(make);
+        setModel(model);
+    }
+
+    public int getModelYear() {
+        return modelYear;
+    }
+
+    public void setModelYear(int modelYear) {
+        if (modelYear >= 1885 && modelYear <= LocalDate.now().getYear() + 1)
+            this.modelYear = modelYear;
+        else
+            throw new IllegalArgumentException("Model year must be 1885-2021");
+    }
+
+    public int getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(int mileage) {
+        if (mileage >= 0)
+            this.mileage = mileage;
+        else
+            throw new IllegalArgumentException("mileage must be greater than or equal to 0");
+    }
+
+    public String getMake() {
+        return make;
+    }
+
+    public void setMake(String make) {
+        List<String> brands = Arrays.asList("Chevrolet", "Mazda", "VW", "Toyota", "Mercedes");
+
+        if (brands.contains(make))
+            this.make = make;
+        else
+            throw new IllegalArgumentException("Valid brands are: " + brands);
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        if (!model.isEmpty())
+            this.model = model;
+        else
+            throw new IllegalArgumentException("Model cannot be empty");
     }
 
     public String getTransmission() {
@@ -75,26 +86,14 @@ public class Car {
     }
 
     public void setTransmission(String transmission) {
-        this.transmission = transmission;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getEngine() {
-        return engine;
-    }
-
-    public void setEngine(String engine) {
-        this.engine = engine;
+        List<String> transmissions = Arrays.asList("manual", "automatic", "electric", "CVT");
+        if (transmissions.contains(transmission))
+            this.transmission = transmission;
+        else
+            throw new IllegalArgumentException("valid transmissions are: " + transmissions);
     }
 
     public String toString() {
-        return String.format("%s %s");
+        return String.format("%d %s %s", modelYear, make, model);
     }
 }
