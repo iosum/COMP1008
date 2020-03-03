@@ -2,7 +2,7 @@ package Employee;
 
 import java.time.LocalDate;
 
-public class Employee {
+public abstract class Employee {
     private String firstName;
     private String lastName;
     private String streetAddress;
@@ -14,6 +14,7 @@ public class Employee {
     private String phoneNumber;
     private String employeeID;
     private LocalDate dateOfBirth;
+    private String socialSecurityNumber;
 
     public Employee(String firstName, String lastName, String streetAddress, String streetAddress2, String city, String region, String postalCode, String country , String phoneNumber, String employeeID, LocalDate dateOfBirth) {
         setFirstName(firstName);
@@ -29,8 +30,24 @@ public class Employee {
         setDateOfBirth(dateOfBirth);
     }
 
+    public Employee() {
+
+    }
+
+    public Employee(String firstName, String lastName, String socialSecurityNumber) {
+        setFirstName(firstName);
+        setLastName(lastName);
+        this.socialSecurityNumber = socialSecurityNumber;
+    }
 
 
+    public String getSocialSecurityNumber() {
+        return socialSecurityNumber;
+    }
+
+    public void setSocialSecurityNumber(String socialSecurityNumber) {
+        this.socialSecurityNumber = socialSecurityNumber;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -149,4 +166,11 @@ public class Employee {
 //    public String toString() {
 //        return String.format("first name: %s\nlast name: %s\naddress: %s\n: ", getFirstName(),getLastName(),getAddress());
 //    }
+
+    public String toString() {
+        return String.format("%s %s%nsocial security number: %s",
+                getFirstName(), getLastName(), getSocialSecurityNumber());
+    }
+
+    public abstract double earnings();
 }

@@ -9,4 +9,9 @@ public class FullTimeEmployee extends Employee{
                             String employeeID, LocalDate dateOfBirth) {
         super(firstName, lastName, streetAddress, streetAddress2, city, region, postalCode, country, phoneNumber, employeeID, dateOfBirth);
     }
+
+    @Override
+    public double earnings() {
+        return 0;
+    }
 }
